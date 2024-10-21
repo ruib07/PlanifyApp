@@ -9,7 +9,7 @@ module.exports = (app) => {
 
   router.post('/usersignin', (req, res, next) => {
     app.services.user.find({
-      Name: req.body.Name,
+      Email: req.body.Email,
     })
       .then((user) => {
         if (bcrypt.compareSync(req.body.Password, user.Password)) {

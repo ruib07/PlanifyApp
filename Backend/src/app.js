@@ -15,8 +15,7 @@ app.use(cors({
 }));
 
 consign({ cwd: 'src', verbose: false })
-  .include('./config/employeepassport.js')
-  .include('./config/userpassport.js')
+  .include('./config/passport.js')
   .then('./config/middlewares.js')
   .then('./services')
   .then('./routes')
