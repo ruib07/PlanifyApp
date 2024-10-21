@@ -149,3 +149,25 @@ test('Test #9 - Insert different passwords', async () => {
 
   expect(updatePasswordResponse.status).toBe(400);
 });
+
+test('Test #10 - Updating user data', () => {
+  const userEmail = generateUniqueEmail();
+
+  return app.db('Users')
+    .insert({
+      Name: 'Rui Barreto',
+      Email: userEmail,
+      Password: 'Rui@Barreto-123',
+    }, ['Id'])
+    .then((userRes) => request(app).put(`${route}/update/${userRes[0].Id}`)
+      .set('Authorization', `bearer ${userToken.userToken}`)
+      .send({
+        Name: 'Filipe Silva',
+        Email: userEmail,
+        Password: 'Rui@Barreto-12',
+        ProfilePicture: 'https://i.sstatic.net/l60Hf.png',
+      }))
+    .then((res) => {
+      expect(res.status).toBe(200);
+    });
+});

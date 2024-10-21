@@ -9,7 +9,7 @@ const byIdRoute = '/v1/users/:Id';
 
 const generateUniqueEmail = () => `${uuid.v4()}@gmail.com`;
 
-test('Test #10 - Receiving token when a user authenticates', () => {
+test('Test #11 - Receiving token when a user authenticates', () => {
   const userEmail = generateUniqueEmail();
 
   return app.services.user.save({
@@ -28,7 +28,7 @@ test('Test #10 - Receiving token when a user authenticates', () => {
     });
 });
 
-test('Test #11 - Wrong authentication attempt for users', () => {
+test('Test #12 - Wrong authentication attempt for users', () => {
   const userEmail = generateUniqueEmail();
 
   return app.services.user.save({
@@ -47,12 +47,12 @@ test('Test #11 - Wrong authentication attempt for users', () => {
     });
 });
 
-test('Test #12 - Access protected user routes', () => request(app).post(byIdRoute)
+test('Test #13 - Access protected user routes', () => request(app).post(byIdRoute)
   .then((res) => {
     expect(res.status).toBe(401);
   }));
 
-test('Test #13 - Creating a user', () => {
+test('Test #14 - Creating a user', () => {
   const userEmail = generateUniqueEmail();
 
   return request(app).post(signupRoute)

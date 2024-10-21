@@ -43,5 +43,11 @@ module.exports = (app) => {
     return res.status(200).json({ message: 'Password updated successfully!' });
   });
 
+  router.put('/update/:Id', async (req, res, next) => {
+    app.services.user.update(req.params.Id, req.body)
+      .then((result) => res.status(200).json(result[0]))
+      .catch((error) => next(error));
+  });
+
   return router;
 };

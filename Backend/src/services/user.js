@@ -67,10 +67,22 @@ module.exports = (app) => {
     }
   };
 
+  const update = async (Id, userRes) => {
+    if (!validatePassword(userRes.Password)) throw new ValidationError('Password does not meet the requirements!');
+
+    const newUserInfo = { ...userRes };
+    newUserInfo.Password = getPasswordHash(userRes.Password);
+
+    return app.db('Users')
+      .where({ Id })
+      .update(newUserInfo, '*');
+  };
+
   return {
     find,
     save,
     confirmEmail,
     updatePassword,
+    update,
   };
 };

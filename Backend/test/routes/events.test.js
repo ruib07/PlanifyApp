@@ -23,12 +23,12 @@ beforeAll(async () => {
   userToken.userToken = jwt.encode(userToken, userSecret);
 });
 
-test('Test #14 - Get all events', () => request(app).get(route)
+test('Test #15 - Get all events', () => request(app).get(route)
   .then((res) => {
     expect(res.status).toBe(200);
   }));
 
-test('Test #15 - Get a event by his title', () => app.db('Events')
+test('Test #16 - Get a event by his title', () => app.db('Events')
   .insert({
     Title: 'Tech Conference 2024',
     Description: 'An annual conference focused on technological innovation, bringing together technology experts and enthusiasts for lectures, workshops and networking.',
@@ -43,7 +43,7 @@ test('Test #15 - Get a event by his title', () => app.db('Events')
     expect(res.status).toBe(200);
   }));
 
-test('Test #16 - Inserting a new event', async () => {
+test('Test #17 - Inserting a new event', async () => {
   await request(app).post(route)
     .set('Authorization', `bearer ${userToken.userToken}`)
     .send({
@@ -78,15 +78,15 @@ describe('Event creation validation', () => {
       expect(res.body.error).toBe(errorMessage);
     });
 
-  test('Test #17 - Insert a event without a title', () => testTemplate({ Title: null }, 'Title of the event is required!'));
-  test('Test #18 - Insert a event without a description', () => testTemplate({ Description: null }, 'Description of the event is required!'));
-  test('Test #19 - Insert a event without a location', () => testTemplate({ Location: null }, 'Location of the event is required!'));
-  test('Test #20 - Insert a event without a date', () => testTemplate({ Date: null }, 'Date of the event is required!'));
-  test('Test #21 - Insert a event without a time', () => testTemplate({ Time: null }, 'Time of the event is required!'));
-  test('Test #21 - Insert a event without IsPublic status', () => testTemplate({ IsPublic: null }, 'Public status of the event is required!'));
+  test('Test #18 - Insert a event without a title', () => testTemplate({ Title: null }, 'Title of the event is required!'));
+  test('Test #19 - Insert a event without a description', () => testTemplate({ Description: null }, 'Description of the event is required!'));
+  test('Test #20 - Insert a event without a location', () => testTemplate({ Location: null }, 'Location of the event is required!'));
+  test('Test #21 - Insert a event without a date', () => testTemplate({ Date: null }, 'Date of the event is required!'));
+  test('Test #22 - Insert a event without a time', () => testTemplate({ Time: null }, 'Time of the event is required!'));
+  test('Test #23 - Insert a event without IsPublic status', () => testTemplate({ IsPublic: null }, 'Public status of the event is required!'));
 });
 
-test('Test #22 - Updating event data', () => app.db('Events')
+test('Test #24 - Updating event data', () => app.db('Events')
   .insert({
     Title: 'Tech Conference 2024',
     Description: 'An annual conference focused on technological innovation, bringing together technology experts and enthusiasts for lectures, workshops and networking.',
@@ -111,7 +111,7 @@ test('Test #22 - Updating event data', () => app.db('Events')
     expect(res.status).toBe(200);
   }));
 
-test('Test #23 - Deleting an event', () => app.db('Events')
+test('Test #25 - Deleting an event', () => app.db('Events')
   .insert({
     Title: 'Tech Conference 2024',
     Description: 'An annual conference focused on technological innovation, bringing together technology experts and enthusiasts for lectures, workshops and networking.',
