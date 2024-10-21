@@ -17,5 +17,7 @@ module.exports = (app) => {
     return app.db('RSVP').insert(registerRSVP, '*');
   };
 
-  return save;
+  return {
+    save,
+  };
 };
