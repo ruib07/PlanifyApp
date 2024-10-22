@@ -44,9 +44,11 @@ const Login: React.FC = () => {
     try {
       const res = await axios.post('http://localhost:3005/auth/usersignin', login);
       const userToken = res.data.userToken;
+      const userId = res.data.user.Id;
 
       if (userToken) {
         localStorage.setItem('userToken', userToken);
+        localStorage.setItem('Id', userId);
         showSuccess();
         navigate('/');
       } else {

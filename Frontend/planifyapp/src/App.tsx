@@ -10,13 +10,13 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
 import Register from './components/Auth/Register';
 import Login from './components/Auth/Login';
+import CreateEvent from './components/Event/CreateEvent';
 {/*import RecoverPasswordEmail from './components/RecoverPassword/RecoverPasswordEmail';
 import ChangePassword from './components/RecoverPassword/ChangePassword';
-import UserProfile from './components/UserProfile';
-import CreateEvent from './components/Event/CreateEvent';
-import EventDetails from './components/Event/EventDetails';
+import UserProfile from './components/UserProfile';*/}
+{/*import EventDetails from './components/Event/EventDetails';
 import ConfirmRSVP from './components/RSVP/ConfirmRSVP';
-import GetRSVPAttendees from './components/RSVP/GetRSVPAttendees'; */}
+import GetRSVPAttendees from './components/RSVP/GetRSVPAttendees';*/}
 
 const App: React.FC = () => {
   return (
@@ -29,9 +29,9 @@ const App: React.FC = () => {
           <Route path='/Authentication/Login' element={<Login />} />
           {/*<Route path='/RecoverPassword/SendEmail' element={<RecoverPasswordEmail />} />
           <Route path='/RecoverPassword/ChangePassword' element={<ChangePassword />} />
-          <Route path='/UserProfile/:Id' element={<UserProfile />} />
+          <Route path='/UserProfile/:Id' element={<UserProfile />} />*/}
           <Route path='/Event/Create' element={<CreateEvent />} />
-          <Route path='/Event/:Title' element={<EventDetails />} />
+          {/*<Route path='/Event/:Title' element={<EventDetails />} />
           <Route path='/RSVP/Confirm' element={<ConfirmRSVP />} />
           <Route path='/RSVP/Attendees' element={<GetRSVPAttendees />} />*/}
           <Route path='*' element={<Home />} />

@@ -11,7 +11,7 @@ module.exports = (app) => {
     if (!registerEvent.Location) throw new ValidationError('Location of the event is required!');
     if (!registerEvent.Date) throw new ValidationError('Date of the event is required!');
     if (!registerEvent.Time) throw new ValidationError('Time of the event is required!');
-    if (!registerEvent.IsPublic) throw new ValidationError('Public status of the event is required!');
+    if (typeof registerEvent.IsPublic !== 'boolean') throw new ValidationError('Public status of the event is required!');
 
     return app.db('Events').insert(registerEvent, '*');
   };
