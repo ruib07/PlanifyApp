@@ -1,26 +1,42 @@
 import React from 'react';
-import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import { ToastContainer } from 'react-toastify';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+import Home from './components/Home';
+{/* import Register from './components/Auth/Register';
+import Login from './components/Auth/Login';
+import RecoverPasswordEmail from './components/RecoverPassword/RecoverPasswordEmail';
+import ChangePassword from './components/RecoverPassword/ChangePassword';
+import UserProfile from './components/UserProfile';
+import CreateEvent from './components/Event/CreateEvent';
+import EventDetails from './components/Event/EventDetails';
+import ConfirmRSVP from './components/RSVP/ConfirmRSVP';
+import GetRSVPAttendees from './components/RSVP/GetRSVPAttendees'; */}
+
+const App: React.FC = () => {
+  return (
+    <Router>
+      <div className='container'>
+        <ToastContainer />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          {/*<Route path='/Authentication/Registration' element={<Register />} />
+          <Route path='/Authentication/Login' element={<Login />} />
+          <Route path='/RecoverPassword/SendEmail' element={<RecoverPasswordEmail />} />
+          <Route path='/RecoverPassword/ChangePassword' element={<ChangePassword />} />
+          <Route path='/UserProfile/:Id' element={<UserProfile />} />
+          <Route path='/Event/Create' element={<CreateEvent />} />
+          <Route path='/Event/:Title' element={<EventDetails />} />
+          <Route path='/RSVP/Confirm' element={<ConfirmRSVP />} />
+          <Route path='/RSVP/Attendees' element={<GetRSVPAttendees />} />*/}
+          <Route path='*' element={<Home />} />
+        </Routes>
+      </div>
+    </Router>
+  );
+};
+ 
 export default App;
