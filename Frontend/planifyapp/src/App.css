@@ -1,9 +1,14 @@
 html,
 body {
   background: radial-gradient(circle at 10% 20%, rgb(69, 86, 102) 0%, rgb(34, 34, 34) 90%);
+  height: 100%;
 }
 
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  font-family: 'Times New Roman', Times, serif;
 }

@@ -1,14 +1,16 @@
+/* eslint-disable no-lone-blocks */
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 
 import { ToastContainer } from 'react-toastify';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Home from './components/Home';
-{/* import Register from './components/Auth/Register';
+import Register from './components/Auth/Register';
 import Login from './components/Auth/Login';
-import RecoverPasswordEmail from './components/RecoverPassword/RecoverPasswordEmail';
+{/*import RecoverPasswordEmail from './components/RecoverPassword/RecoverPasswordEmail';
 import ChangePassword from './components/RecoverPassword/ChangePassword';
 import UserProfile from './components/UserProfile';
 import CreateEvent from './components/Event/CreateEvent';
@@ -23,9 +25,9 @@ const App: React.FC = () => {
         <ToastContainer />
         <Routes>
           <Route path='/' element={<Home />} />
-          {/*<Route path='/Authentication/Registration' element={<Register />} />
+          <Route path='/Authentication/Registration' element={<Register />} />
           <Route path='/Authentication/Login' element={<Login />} />
-          <Route path='/RecoverPassword/SendEmail' element={<RecoverPasswordEmail />} />
+          {/*<Route path='/RecoverPassword/SendEmail' element={<RecoverPasswordEmail />} />
           <Route path='/RecoverPassword/ChangePassword' element={<ChangePassword />} />
           <Route path='/UserProfile/:Id' element={<UserProfile />} />
           <Route path='/Event/Create' element={<CreateEvent />} />
