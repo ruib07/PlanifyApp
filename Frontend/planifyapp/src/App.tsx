@@ -12,13 +12,11 @@ import Register from "./components/Auth/Register";
 import Login from "./components/Auth/Login";
 import RecoverPasswordEmail from "./components/RecoverPassword/RecoverPasswordEmail";
 import ChangePassword from "./components/RecoverPassword/ChangePassword";
+import UserProfile from "./components/UserProfile";
 import CreateEvent from "./components/Event/CreateEvent";
 import EventDetails from "./components/Event/EventDetails";
 import ScrollToTop from "./components/ScrollToTop";
-{
-  /*
-import UserProfile from './components/UserProfile';*/
-}
+
 {
   /*
 import GetRSVPAttendees from './components/RSVP/GetRSVPAttendees';*/
@@ -38,9 +36,11 @@ const App: React.FC = () => {
             path="/RecoverPassword/EmailConfirmation"
             element={<RecoverPasswordEmail />}
           />
-          <Route path='/RecoverPassword/ChangePassword' element={<ChangePassword />} />
-          {/*
-          <Route path='/UserProfile/:Id' element={<UserProfile />} />*/}
+          <Route
+            path="/RecoverPassword/ChangePassword"
+            element={<ChangePassword />}
+          />
+          <Route path="/UserProfile/:Id" element={<UserProfile />} />
           <Route path="/Event/Create" element={<CreateEvent />} />
           <Route path="/Event/Details/:Title" element={<EventDetails />} />
           {/*<Route path='/RSVP/Attendees' element={<GetRSVPAttendees />} />*/}

@@ -38,9 +38,7 @@ const Home: React.FC = () => {
         "http://localhost:3005/v1/events"
       );
       setEvents(response.data);
-    } catch (error) {
-      console.error("Erro ao listar eventos:", error);
-    }
+    } catch (error) {}
   }, []);
 
   useEffect(() => {

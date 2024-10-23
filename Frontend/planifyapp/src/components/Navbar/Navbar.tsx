@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import "../../styles/Navbar/Navbar.css";
+import "../../styles/Navbar.css";
 import Icon from "../../assets/planifyicon.png";
 import { Button, Dropdown } from "react-bootstrap";
 

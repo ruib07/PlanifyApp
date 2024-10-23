@@ -74,7 +74,6 @@ const CreateEvent: React.FC = () => {
         setIsPublic(false);
         navigate('/');
       } catch (error) {
-        console.error('Erro ao enviar evento', error);
         showError();
       }  
     } else {

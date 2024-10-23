@@ -53,7 +53,6 @@ const ConfirmRSVP: React.FC<ConfirmRSVPProps> = ({ show, onHide, eventId }) => {
       );
       showSuccess();
     } catch (error) {
-      console.error("Error confirming RSVP:", error);
       showError();
     } finally {
       setLoading(false);
