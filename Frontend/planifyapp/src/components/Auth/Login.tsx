@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { Button } from "react-bootstrap";
-import "../../styles/Auth/Login.css";
+import "../../styles/Auth.css";
 import AuthenticationNavbar from "../Navbar/AuthenticationNavbar";
 
 const Login: React.FC = () => {
@@ -67,17 +67,17 @@ const Login: React.FC = () => {
       <AuthenticationNavbar />
       <br />
       <br />
-      <div className="login-container">
-        <div className="login-grid">
-          <div className="card-container login-col-sm-9 col-md-7 col-lg-5">
-            <div className="card1 login-col-sm-9 col-md-7 col-lg-5">
-              <div className="login-card login-card-signin my-5">
-                <div className="login-card-body">
-                  <h5 className="login-card-title text-center">Login</h5>
+      <div className="auth-container">
+        <div className="auth-grid">
+          <div className="card-container auth-col-sm-9 col-md-7 col-lg-5">
+            <div className="card1 col-sm-9 col-md-7 col-lg-5">
+              <div className="auth-card auth-card-signin my-5">
+                <div className="auth-card-body">
+                  <h5 className="auth-card-title text-center">Login</h5>
                   <br />
-                  <form className="login-form-signin" onSubmit={handleLogin}>
-                    <div className="login-inputs">
-                      <div className="login-form-label-group">
+                  <form className="auth-form-signin" onSubmit={handleLogin}>
+                    <div className="auth-inputs">
+                      <div className="auth-form-label-group">
                         <input
                           type="email"
                           id="Email"
@@ -90,7 +90,7 @@ const Login: React.FC = () => {
                           onChange={(e) => setEmail(e.target.value)}
                         />
                       </div>
-                      <div className="login-form-label-group">
+                      <div className="auth-form-label-group">
                         <input
                           type={visible ? "password" : "text"}
                           id="Password"
@@ -102,7 +102,7 @@ const Login: React.FC = () => {
                           onChange={(e) => setPassword(e.target.value)}
                         />
                         <span
-                          className="login-eyeicon"
+                          className="auth-eyeicon"
                           onClick={togglePasswordVisibility}
                         >
                           <FontAwesomeIcon
@@ -110,26 +110,22 @@ const Login: React.FC = () => {
                           />
                         </span>
                       </div>
-                      <div className="login-forgot-remember ms-4">
+                      <div className="auth-forgot-remember ms-4">
                         <div className="forgotpassword">
-                          <p
-                            className="login-forgotpassword-p"
-                            onClick={() =>
-                              navigate(
-                                "/Authentication/RecoverPassword/SendEmail"
-                              )
-                            }
+                          <Link
+                            to="/RecoverPassword/EmailConfirmation"
+                            className="auth-forgotpassword-p"
                           >
                             Forgot your password?
-                          </p>
+                          </Link>
                         </div>
                       </div>
 
                       <br />
                       <Button
                         variant="light"
-                        id="login-employees"
-                        className="login-btn"
+                        id="login-users"
+                        className="auth-btn"
                         type="submit"
                       >
                         Login

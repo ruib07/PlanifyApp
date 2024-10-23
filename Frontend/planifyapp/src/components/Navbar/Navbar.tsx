@@ -42,9 +42,7 @@ const Navbar: React.FC = () => {
               }
             );
             setUser(response.data);
-          } catch (error) {
-            console.error("Erro ao encontrar user:", error);
-          }
+          } catch (error) {}
         }
       }
     };

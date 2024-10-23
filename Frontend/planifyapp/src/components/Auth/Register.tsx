@@ -5,7 +5,7 @@ import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { Button } from "react-bootstrap";
-import "../../styles/Auth/Register.css";
+import "../../styles/Auth.css";
 import AuthenticationNavbar from "../Navbar/AuthenticationNavbar";
 
 const Register: React.FC = () => {
@@ -64,22 +64,19 @@ const Register: React.FC = () => {
       <AuthenticationNavbar />
       <br />
       <br />
-      <div className="register-container">
-        <div className="register-grid">
-          <div className="register-card-container col-sm-9 col-md-7 col-lg-5">
-            <div className="register-card1 col-sm-9 col-md-7 col-lg-5">
-              <div className="register-card register-card-signin my-5">
-                <div className="register-card-body">
-                  <h5 className="register-card-title text-center">
+      <div className="auth-container">
+        <div className="auth-grid">
+          <div className="auth-card-container col-sm-9 col-md-7 col-lg-5">
+            <div className="auth-card1 col-sm-9 col-md-7 col-lg-5">
+              <div className="auth-card auth-card-signin my-5">
+                <div className="auth-card-body">
+                  <h5 className="auth-card-title text-center">
                     Create an account
                   </h5>
                   <br />
-                  <form
-                    className="register-form-signin"
-                    onSubmit={registerUser}
-                  >
-                    <div className="register-inputs">
-                      <div className="register-form-label-group">
+                  <form className="auth-form-signin" onSubmit={registerUser}>
+                    <div className="auth-inputs">
+                      <div className="auth-form-label-group">
                         <input
                           type="text"
                           id="Name"
@@ -91,7 +88,7 @@ const Register: React.FC = () => {
                           onChange={(e) => setName(e.target.value)}
                         />
                       </div>
-                      <div className="register-form-label-group">
+                      <div className="auth-form-label-group">
                         <input
                           type="email"
                           id="Email"
@@ -103,7 +100,7 @@ const Register: React.FC = () => {
                           onChange={(e) => setEmail(e.target.value)}
                         />
                       </div>
-                      <div className="register-form-label-group">
+                      <div className="auth-form-label-group">
                         <input
                           type={visible ? "password" : "text"}
                           id="Password"
@@ -115,7 +112,7 @@ const Register: React.FC = () => {
                           onChange={(e) => setPassword(e.target.value)}
                         />
                         <span
-                          className="register-eyeicon"
+                          className="auth-eyeicon"
                           onClick={togglePasswordVisibility}
                         >
                           <FontAwesomeIcon
@@ -127,11 +124,13 @@ const Register: React.FC = () => {
                       <Button
                         variant="light"
                         id="register-users"
-                        className="register-btn"
+                        className="auth-btn"
                         type="submit"
                       >
                         Create Account
                       </Button>
+                      <br />
+                      <br />
                     </div>
                   </form>
                 </div>

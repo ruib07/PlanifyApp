@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../styles/Navbar/AuthenticationNavbar.css";
 import Icon from "../../assets/planifyicon.png";
 
 const AuthenticationNavbar: React.FC = () => {
