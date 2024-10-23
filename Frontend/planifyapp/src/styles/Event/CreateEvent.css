@@ -1,0 +1,104 @@
+.createevent-container {
+    display: flex;
+    justify-content: center;
+}
+
+.createevent-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+.createevent-form {
+    width: 90%;
+    height: 3.5vh !important;
+    border-radius: 7px;
+}
+
+.createevent-inputs {
+    text-align: center !important;
+}
+
+::placeholder {
+    color: #000;
+    font-size: 16px;
+}
+
+::-ms-input-placeholder {
+    color: #000;
+}
+
+.createevent-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    cursor: pointer;
+    display: flex;
+}
+
+.createevent-card-signin {
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.createevent-card-signin .createevent-card-title {
+    font-weight: bolder;
+    font-size: 22px;
+    color: #000;
+}
+
+.createevent-card-signin .createevent-card-body {
+    padding: 2rem;
+    flex: 1;
+}
+
+.createevent-form-signin {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.createevent-form-signin .btn {
+    font-size: 16px;
+    font-weight: normal;
+    transition: all 0.2s;
+}
+
+.createevent-form-label-group {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.createevent-eyeicon {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.createevent-hr {
+    margin-top: -25px;
+    margin-bottom: 25px;
+    color: #fff;
+    width: 96%;
+}
+
+.createevent-texts-createacc {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.createevent-btn {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 16px;
+    font-weight: normal;
+}

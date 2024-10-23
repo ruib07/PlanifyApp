@@ -1,22 +1,22 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-import axios from 'axios';
-import { toast } from 'react-toastify';
-import { Button } from 'react-bootstrap';
-import '../../styles/Auth/Login.css';
-import AuthenticationNavbar from '../Navbar/AuthenticationNavbar';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
+import { toast } from "react-toastify";
+import { Button } from "react-bootstrap";
+import "../../styles/Auth/Login.css";
+import AuthenticationNavbar from "../Navbar/AuthenticationNavbar";
 
 const Login: React.FC = () => {
-  const [Email, setEmail] = useState<string>('');
-  const [Password, setPassword] = useState<string>('');
+  const [Email, setEmail] = useState<string>("");
+  const [Password, setPassword] = useState<string>("");
   const [visible, setVisible] = useState<boolean>(true);
   const navigate = useNavigate();
 
   const showSuccess = () => {
-    toast.success('Login Efetuado com sucesso!', {
-      position: 'bottom-right',
+    toast.success("Login successfully!", {
+      position: "bottom-right",
       autoClose: 5000,
       closeOnClick: true,
       draggable: true,
@@ -24,8 +24,8 @@ const Login: React.FC = () => {
   };
 
   const showError = () => {
-    toast.error('Login não foi efetuado!', {
-      position: 'bottom-right',
+    toast.error("Login was not successfull!", {
+      position: "bottom-right",
       autoClose: 5000,
       closeOnClick: true,
       draggable: true,
@@ -42,15 +42,18 @@ const Login: React.FC = () => {
     const login = { Email, Password };
 
     try {
-      const res = await axios.post('http://localhost:3005/auth/usersignin', login);
+      const res = await axios.post(
+        "http://localhost:3005/auth/usersignin",
+        login
+      );
       const userToken = res.data.userToken;
       const userId = res.data.user.Id;
 
       if (userToken) {
-        localStorage.setItem('userToken', userToken);
-        localStorage.setItem('Id', userId);
+        localStorage.setItem("userToken", userToken);
+        localStorage.setItem("Id", userId);
         showSuccess();
-        navigate('/');
+        navigate("/");
       } else {
         showError();
       }
@@ -61,7 +64,9 @@ const Login: React.FC = () => {
 
   return (
     <>
-      <AuthenticationNavbar /><br /><br />
+      <AuthenticationNavbar />
+      <br />
+      <br />
       <div className="login-container">
         <div className="login-grid">
           <div className="card-container login-col-sm-9 col-md-7 col-lg-5">
@@ -87,7 +92,7 @@ const Login: React.FC = () => {
                       </div>
                       <div className="login-form-label-group">
                         <input
-                          type={visible ? 'password' : 'text'}
+                          type={visible ? "password" : "text"}
                           id="Password"
                           name="Password"
                           className="form-control"
@@ -96,15 +101,24 @@ const Login: React.FC = () => {
                           value={Password}
                           onChange={(e) => setPassword(e.target.value)}
                         />
-                        <span className="login-eyeicon" onClick={togglePasswordVisibility}>
-                          <FontAwesomeIcon icon={visible ? faEye : faEyeSlash} />
+                        <span
+                          className="login-eyeicon"
+                          onClick={togglePasswordVisibility}
+                        >
+                          <FontAwesomeIcon
+                            icon={visible ? faEye : faEyeSlash}
+                          />
                         </span>
                       </div>
                       <div className="login-forgot-remember ms-4">
                         <div className="forgotpassword">
-                          <p 
-                            className="login-forgotpassword-p" 
-                            onClick={() => navigate('/Authentication/RecoverPassword/SendEmail')}
+                          <p
+                            className="login-forgotpassword-p"
+                            onClick={() =>
+                              navigate(
+                                "/Authentication/RecoverPassword/SendEmail"
+                              )
+                            }
                           >
                             Forgot your password?
                           </p>
@@ -112,7 +126,12 @@ const Login: React.FC = () => {
                       </div>
 
                       <br />
-                      <Button variant="light" id="login-employees" className="login-btn" type="submit">
+                      <Button
+                        variant="light"
+                        id="login-employees"
+                        className="login-btn"
+                        type="submit"
+                      >
                         Login
                       </Button>
                     </div>

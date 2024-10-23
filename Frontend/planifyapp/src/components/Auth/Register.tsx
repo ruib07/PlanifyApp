@@ -1,23 +1,23 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-import axios from 'axios';
-import { toast } from 'react-toastify';
-import { Button } from 'react-bootstrap';
-import '../../styles/Auth/Register.css';
-import AuthenticationNavbar from '../Navbar/AuthenticationNavbar';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
+import { toast } from "react-toastify";
+import { Button } from "react-bootstrap";
+import "../../styles/Auth/Register.css";
+import AuthenticationNavbar from "../Navbar/AuthenticationNavbar";
 
 const Register: React.FC = () => {
-  const [Name, setName] = useState<string>('');
-  const [Email, setEmail] = useState<string>('');
-  const [Password, setPassword] = useState<string>('');
+  const [Name, setName] = useState<string>("");
+  const [Email, setEmail] = useState<string>("");
+  const [Password, setPassword] = useState<string>("");
   const [visible, setVisible] = useState<boolean>(true);
   const navigate = useNavigate();
 
   const showSuccess = () => {
-    toast.success('Registration completed successfully!', {
-      position: 'bottom-right',
+    toast.success("Registration completed successfully!", {
+      position: "bottom-right",
       autoClose: 5000,
       closeOnClick: true,
       draggable: true,
@@ -25,8 +25,8 @@ const Register: React.FC = () => {
   };
 
   const showError = () => {
-    toast.error('Registration was not completed!', {
-      position: 'bottom-right',
+    toast.error("Registration was not completed!", {
+      position: "bottom-right",
       autoClose: 5000,
       closeOnClick: true,
       draggable: true,
@@ -43,13 +43,13 @@ const Register: React.FC = () => {
     };
 
     try {
-      await axios.post('http://localhost:3005/v1/users', newUser);
-      showSuccess(); 
+      await axios.post("http://localhost:3005/v1/users", newUser);
+      showSuccess();
 
-      setName('');  
-      setEmail('');   
-      setPassword('');
-      navigate('/Authentication/Login');
+      setName("");
+      setEmail("");
+      setPassword("");
+      navigate("/Authentication/Login");
     } catch (error) {
       showError();
     }
@@ -61,16 +61,23 @@ const Register: React.FC = () => {
 
   return (
     <>
-      <AuthenticationNavbar /><br /><br />
+      <AuthenticationNavbar />
+      <br />
+      <br />
       <div className="register-container">
         <div className="register-grid">
           <div className="register-card-container col-sm-9 col-md-7 col-lg-5">
             <div className="register-card1 col-sm-9 col-md-7 col-lg-5">
               <div className="register-card register-card-signin my-5">
                 <div className="register-card-body">
-                  <h5 className="register-card-title text-center">Create an account</h5>
+                  <h5 className="register-card-title text-center">
+                    Create an account
+                  </h5>
                   <br />
-                  <form className="register-form-signin" onSubmit={registerUser}>
+                  <form
+                    className="register-form-signin"
+                    onSubmit={registerUser}
+                  >
                     <div className="register-inputs">
                       <div className="register-form-label-group">
                         <input
@@ -98,7 +105,7 @@ const Register: React.FC = () => {
                       </div>
                       <div className="register-form-label-group">
                         <input
-                          type={visible ? 'password' : 'text'}
+                          type={visible ? "password" : "text"}
                           id="Password"
                           name="Password"
                           className="form-control"
@@ -107,13 +114,18 @@ const Register: React.FC = () => {
                           value={Password}
                           onChange={(e) => setPassword(e.target.value)}
                         />
-                        <span className="register-eyeicon" onClick={togglePasswordVisibility}>
-                          <FontAwesomeIcon icon={visible ? faEye : faEyeSlash} />
+                        <span
+                          className="register-eyeicon"
+                          onClick={togglePasswordVisibility}
+                        >
+                          <FontAwesomeIcon
+                            icon={visible ? faEye : faEyeSlash}
+                          />
                         </span>
                       </div>
                       <br />
                       <Button
-                        variant='light'
+                        variant="light"
                         id="register-users"
                         className="register-btn"
                         type="submit"

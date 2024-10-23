@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { Button } from 'react-bootstrap';
-import '../../styles/Auth/Register.css';
+import '../../styles/Event/CreateEvent.css';
 import AuthenticationNavbar from '../Navbar/AuthenticationNavbar';
 
 const CreateEvent: React.FC = () => {
@@ -85,17 +85,17 @@ const CreateEvent: React.FC = () => {
   return (
     <>
       <AuthenticationNavbar /><br /><br />
-      <div className="register-container">
-        <div className="register-grid">
-          <div className="register-card-container col-sm-9 col-md-7 col-lg-5">
-            <div className="register-card1 col-sm-9 col-md-7 col-lg-5">
-              <div className="register-card register-card-signin my-5">
-                <div className="register-card-body">
-                  <h5 className="register-card-title text-center">Create an event</h5>
+      <div className="createevent-container">
+        <div className="createevent-grid">
+          <div className="createevent-card-container col-sm-9 col-md-7 col-lg-5">
+            <div className="createevent-card1 col-sm-9 col-md-7 col-lg-5">
+              <div className="createevent-card createevent-card-signin my-5">
+                <div className="createevent-card-body">
+                  <h5 className="createevent-card-title text-center">Create an event</h5>
                   <br />
-                  <form className="register-form-signin" onSubmit={registerUser}>
-                    <div className="register-inputs">
-                      <div className="register-form-label-group">
+                  <form className="createevent-form-signin" onSubmit={registerUser}>
+                    <div className="createevent-inputs">
+                      <div className="createevent-form-label-group">
                         <input
                           type="text"
                           id="Name"
@@ -107,7 +107,7 @@ const CreateEvent: React.FC = () => {
                           onChange={(e) => setTitle(e.target.value)}
                         />
                       </div>
-                      <div className="register-form-label-group">
+                      <div className="createevent-form-label-group">
                         <textarea
                           id="Description"
                           name="Description"
@@ -119,7 +119,7 @@ const CreateEvent: React.FC = () => {
                           rows={5}
                         />
                       </div>
-                      <div className="register-form-label-group">
+                      <div className="createevent-form-label-group">
                         <input
                           type="text"
                           id="Location"
@@ -131,7 +131,7 @@ const CreateEvent: React.FC = () => {
                           onChange={(e) => setLocation(e.target.value)}
                         />
                       </div>
-                      <div className="register-form-label-group">
+                      <div className="createevent-form-label-group">
                         <input
                           type="date"
                           id="Date"
@@ -143,7 +143,7 @@ const CreateEvent: React.FC = () => {
                           onChange={(e) => setDate(e.target.value)}
                         />
                       </div>
-                      <div className="register-form-label-group">
+                      <div className="createevent-form-label-group">
                         <input
                           type="time"
                           id="Time"
@@ -155,7 +155,7 @@ const CreateEvent: React.FC = () => {
                           onChange={(e) => setTime(e.target.value)}
                         />
                       </div>
-                      <div className="register-form-label-group">
+                      <div className="createevent-form-label-group">
                         <label>Is Public?</label>
                         <input
                           type="checkbox"
@@ -169,8 +169,8 @@ const CreateEvent: React.FC = () => {
                       <br />
                       <Button
                         variant='light'
-                        id="register-users"
-                        className="register-btn"
+                        id="createevent-users"
+                        className="createevent-btn"
                         type="submit"
                       >
                         Create Event
