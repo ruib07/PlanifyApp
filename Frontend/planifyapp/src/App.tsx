@@ -15,12 +15,8 @@ import ChangePassword from "./components/RecoverPassword/ChangePassword";
 import UserProfile from "./components/UserProfile";
 import CreateEvent from "./components/Event/CreateEvent";
 import EventDetails from "./components/Event/EventDetails";
+import Attendees from "./components/RSVP/Attendees";
 import ScrollToTop from "./components/ScrollToTop";
-
-{
-  /*
-import GetRSVPAttendees from './components/RSVP/GetRSVPAttendees';*/
-}
 
 const App: React.FC = () => {
   return (
@@ -43,7 +39,7 @@ const App: React.FC = () => {
           <Route path="/UserProfile/:Id" element={<UserProfile />} />
           <Route path="/Event/Create" element={<CreateEvent />} />
           <Route path="/Event/Details/:Title" element={<EventDetails />} />
-          {/*<Route path='/RSVP/Attendees' element={<GetRSVPAttendees />} />*/}
+          <Route path="/Events/:eventId/Attendees" element={<Attendees />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </div>

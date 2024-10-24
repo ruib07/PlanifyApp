@@ -26,7 +26,7 @@ const formatTimeToHHMM = (timeString: string): string => {
 const EventDetails: React.FC = () => {
   const { Title } = useParams<{ Title: string }>();
   const [event, setEvent] = useState<Event | null>(null);
-  const [showRSVPModal, setShowRSVPModal] = useState(false); 
+  const [showRSVPModal, setShowRSVPModal] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -78,7 +78,10 @@ const EventDetails: React.FC = () => {
             Confirm your presence
           </Button>
           <span className="mx-2">|</span>
-          <Button variant="outline-primary" onClick={() => navigate("/")}>
+          <Button
+            variant="outline-primary"
+            onClick={() => navigate(`/Events/${event.Id}/Attendees`)}
+          >
             See all attendees
           </Button>
         </div>
