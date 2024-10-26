@@ -13,7 +13,7 @@ To run this project, you have to complete the following steps:
 With this steps, you can have the project on your computer without any problem. Have a great day 😄
 
 Home Page:
-<img width="1702" alt="Screenshot 2024-04-28 at 14 54 09" src="[https://github.com/ruib07/TheKnife/assets/99493009/35d13031-4cdd-498b-9316-8cde0bdffc9a](https://github.com/user-attachments/assets/8bd032eb-929d-4db3-8e14-d4f3377e1e16)">
+<img width="1702" alt="Screenshot 2024-04-28 at 14 54 09" src="https://github.com/user-attachments/assets/8bd032eb-929d-4db3-8e14-d4f3377e1e16">
 
 Restaurants Page:
 <img width="1703" alt="Screenshot 2024-04-28 at 14 54 17" src="https://github.com/ruib07/TheKnife/assets/99493009/a3fc8cc6-f1a7-4f7d-812b-94578def22e7">
