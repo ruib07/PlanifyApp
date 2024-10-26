@@ -1,14 +1,15 @@
 To run this project, you have to complete the following steps:
- - Install Docker and run a terminal on the backend folder the following command: docker-compose --env-file env/test.env up -d
  - Create a .env file with the database credentials you want
+ - Install Docker and run a terminal on the backend folder the following command: docker compose --env-file env/test.env up -d
  - Create a user with password and a database on postgres
  - Install the postgres extension on VS Code
  - Connect to the server where your database is
- - npm i
- - npm run knex:migrate:test:mac / knex:migrate:test:windows depending on your OS
- - npm run test:mac / test:windows
- - npm run start:test:mac / start:test:windows
- - Open a terminal on the angular frontend folder and run: npm i and ng serve -o
+ - On the backend file, run the following commands:
+   - npm i
+   - npm run knex:migrate:test
+   - npm run test
+   - npm run start:test
+ - Open a terminal on the react frontend folder and run: npm i and npm start
 
 With this steps, you can have the project on your computer without any problem. Have a great day 😄
 
